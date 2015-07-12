@@ -3,7 +3,7 @@
     dataFile <- "household_power_consumption.txt"
 
 #Read and subset data
-  
+
     data <- read.table(dataFile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
     subSetData <- data[data$Date %in% c("1/2/2007","2/2/2007") ,]
 
@@ -19,7 +19,7 @@
 
 # Create png-based plots for specified data
 #Add lines, legend as appropriate
-    
+
     png("plot4.png", width=480, height=480)
     par(mfrow = c(2, 2)) 
 
@@ -33,5 +33,3 @@
     legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=, lwd=2.5, col=c("black", "red", "blue"), bty="o")
 
     plot(datetime, globalReactivePower, type="l", xlab="datetime", ylab="Global_reactive_power")
-
-    dev.off()
